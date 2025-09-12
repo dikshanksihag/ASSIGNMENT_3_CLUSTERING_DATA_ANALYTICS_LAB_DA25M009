@@ -39,8 +39,8 @@ We applied multiple methods to handle the class imbalance:
 ---
 
 ## 📊 Performance Comparison
-$$
-\begin{array}{|c|c|c|c|c|}
+
+$$\begin{array}{|c|c|c|c|c|}
 \hline
 \textbf{Method} & \textbf{Accuracy} & \textbf{Precision (Fraud)} & \textbf{Recall (Fraud)} & \textbf{F1-Score (Fraud)} \\
 \hline
@@ -52,8 +52,8 @@ $$
 \hline
 \text{CBU} & 0.99 & 0.64 & 0.78 & 0.70 \\
 \hline
-\end{array}
-$$
+\end{array}$$
+
 ---
 
 ## 🔑 Key Insights
