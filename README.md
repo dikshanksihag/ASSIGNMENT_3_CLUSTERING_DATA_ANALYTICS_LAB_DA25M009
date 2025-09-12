@@ -44,7 +44,7 @@ $$\begin{array}{|c|c|c|c|c|}
 \hline
 \textbf{Method} & \textbf{Accuracy} & \textbf{Precision (Fraud)} & \textbf{Recall (Fraud)} & \textbf{F1-Score (Fraud)} \\
 \hline
-\text{Baseline} & 0.99 & 0.83 & 0.60 & 0.7 \\
+\text{Baseline} & 0.99 & 0.86 & 0.60 & 0.7 \\
 \hline
 \text{Smote} & 0.99 & 0.87 & 0.74 & 0.80 \\
 \hline
