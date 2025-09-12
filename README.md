@@ -54,9 +54,6 @@ $$
 \hline
 \end{array}
 $$
-
-> ⚠️ Replace the above placeholder values with your actual model results.
-
 ---
 
 ## 🔑 Key Insights
