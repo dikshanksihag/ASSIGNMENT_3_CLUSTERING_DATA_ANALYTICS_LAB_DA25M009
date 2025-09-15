@@ -37,12 +37,18 @@ Traditional oversampling methods such as **SMOTE** interpolate between existing 
 $$
 \begin{array}{|l|l|l|}
 \hline
-\textbf{Metric} & \textbf{Baseline Balanced} & \textbf{GMM+CBU} \\ \hline
-\text{Precision} & 0.7500 & 0.8182 \\ \hline
-\text{Recall} & 0.5714 & 0.6429 \\ \hline
-\text{F1-score} & 0.6486 & 0.7200 \\ \hline
-\text{ROC-AUC} & 0.9123 & 0.9577 \\ \hline
-\text{PR-AUC} & 0.6832 & 0.7458 \\ \hline
+\textbf{Metric} & \textbf{Baseline Balanced} & \textbf{GMM+CBU} \\ 
+\hline
+\text{Precision} & 0.7500 & 0.8182 \\ 
+\hline
+\text{Recall} & 0.5714 & 0.6429 \\ 
+\hline
+\text{F1-score} & 0.6486 & 0.7200 \\ 
+\hline
+\text{ROC-AUC} & 0.9123 & 0.9577 \\ 
+\hline
+\text{PR-AUC} & 0.6832 & 0.7458 \\ 
+\hline
 \end{array}
 $$
 
