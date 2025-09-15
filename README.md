@@ -1,6 +1,10 @@
-# ASSIGNMENT 4 CLUSTERING DATA ANALYTICS LAB_DA25M009
 
+# ASSIGNMENT 4 CLUSTERING DATA ANALYTICS LAB_DA25M009
 # GMM-Based Oversampling for Imbalanced Classification
+
+## ⚠️ Important Note
+- The repository URL may show a different number due to a minor typing error that was noticed later
+- Please **ignore the URL discrepancy** — this repository is strictly and exclusively for **Assignment 4**. 
 
 ## 📌 Overview
 This project investigates the effectiveness of **Gaussian Mixture Model (GMM)-based oversampling** compared to a baseline balanced model. The goal is to improve the detection of minority class samples in an imbalanced dataset by generating high-quality synthetic data.
