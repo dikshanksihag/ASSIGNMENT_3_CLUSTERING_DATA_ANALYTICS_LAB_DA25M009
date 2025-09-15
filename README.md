@@ -36,36 +36,35 @@ Traditional oversampling methods such as **SMOTE** interpolate between existing 
 
 #### Performance Metric
 $$
-\begin{array}{|l|l|l|}
+\begin{array}{|l|l|l|l|}
 \hline
-\textbf{Metric} & \textbf{Baseline Balanced} & \textbf{GMM+CBU} \\ 
+\textbf{Metric} & \textbf{Baseline} & \textbf{GMM} & \textbf{GMM+CBU} \\ \hline
+\text{Precision} & 0.8211 & 0.7521 & 0.8349 \\ 
 \hline
-\text{Precision} & 0.8211 & 0.8011 \\ 
+\text{Recall}    & 0.6047 & 0.7054 & 0.7054 \\ 
 \hline
-\text{Recall} & 0.6047 & 0.7209 \\ 
+\text{F1-score}  & 0.6964 & 0.7280 & 0.7647 \\ 
 \hline
-\text{F1-score} & 0.6964 & 0.7592 \\ 
+\text{ROC-AUC}   & 0.9495 & 0.9556 & 0.9619 \\ 
 \hline
-\text{ROC-AUC} & 0.9495 & 0.9629 \\ 
-\hline
-\text{PR-AUC} & 0.6669 & 0.6709 \\ 
+\text{PR-AUC}    & 0.6669 & 0.6697 & 0.6735 \\ 
 \hline
 \end{array}
 $$
 
 #### Precision-Recall Curve
 
-<img width="939" height="433" alt="{014DB632-CBBC-4135-AA86-6858FA08EE4F}" src="https://github.com/user-attachments/assets/e829d9cc-21ff-4eb3-8ab9-c8e81f2c1d1e" />
+<img width="1038" height="481" alt="{448C0736-139B-4391-ACD3-BFA53924B7F2}" src="https://github.com/user-attachments/assets/2f9d3928-7916-453c-ac6d-a0aa13eab598" />
 
 
 ---
 
 ## 🔎 Analysis
 
-- **Recall improved** significantly (0.6047 → 0.7209), meaning the model became better at detecting true minority samples.  
-- **Precision (stable)** (0.8211 → 0.8011), showing that oversampling with GMM did not introduce significantly noisy or overlapping samples.  
-- **F1-score improved**, confirming a better balance between sensitivity and specificity.  
-- Both **ROC-AUC** and **PR-AUC** improved, showing stronger generalization and robustness across thresholds.  
+- **Recall improved** (0.6047 → 0.7054) with both GMM and GMM+CBU, showing better sensitivity to minority samples.  
+- **Precision shifted**: it dropped with plain GMM (0.8211 → 0.7521) but was restored and even improved with GMM+CBU (0.8349), meaning CBU helped control noise and sharpen decision boundaries.  
+- **F1-score steadily improved** (0.6964 → 0.7280 → 0.7647), confirming a progressively better trade-off between precision and recall.  
+- Both **ROC-AUC** (0.9495 → 0.9556 → 0.9619) and **PR-AUC** (0.6669 → 0.6697 → 0.6735) consistently improved, demonstrating stronger robustness and class separability across thresholds.  
 
 ---
 
