@@ -1,64 +1,68 @@
-# ASSIGNMENT 3 CLUSTERING DATA ANALYTICS LAB_DA25M009
+# ASSIGNMENT 4 CLUSTERING DATA ANALYTICS LAB_DA25M009
 
+# GMM-Based Oversampling for Imbalanced Classification
 
-# Fraud Detection with Imbalanced Data
+## 📌 Overview
+This project investigates the effectiveness of **Gaussian Mixture Model (GMM)-based oversampling** compared to a baseline balanced model. The goal is to improve the detection of minority class samples in an imbalanced dataset by generating high-quality synthetic data.
 
-This assignment explores the problem of **imbalanced classification** in fraud detection.  
-I use **Logistic Regression** as the baseline model and experiment with different **resampling techniques** and **hyperparameter optimization** methods to improve performance on the minority (fraud) class.
-
----
-
-## 📌 Project Workflow
-
-### 1. Data Preprocessing
-- Loaded and cleaned the dataset.
-- Identified the class imbalance problem (majority: non-fraud, minority: fraud).
-- Split the data into **training** and **test** sets.
-
-### 2. Resampling Techniques
-We applied multiple methods to handle the class imbalance:
-- **Undersampling** – reduces the majority class.
-- **Oversampling** – duplicates minority class samples.
-- **SMOTE** – creates synthetic minority samples.
-
-### 3. Model Training
-- Used **Logistic Regression** as the classifier.
-- Trained on the **original imbalanced data** and each resampled dataset.
-
-### 4. Model Evaluation
-- Evaluated models on the **original test set** to measure generalization.
-- Metrics: **Accuracy, Precision, Recall, and F1-score** (focused on the minority/fraud class).
-
-### 5. Extra: Randomized Search
-- Applied **RandomizedSearchCV** to tune hyperparameters:
-  - Regularization strength `C`
-  - Penalty type (`l1`, `l2`)
-  - Solver (`liblinear`, `saga`)
-  - Maximum iterations
+Traditional oversampling methods such as **SMOTE** interpolate between existing minority class samples, which can lead to unrealistic points and overlapping distributions. GMM, on the other hand, models the **true underlying probability distribution** of the minority class, enabling more robust and representative synthetic data generation.
 
 ---
 
-## 📊 Performance Comparison
+## ⚙️ Methodology
+1. **Baseline Model (Balanced Sampling):**  
+   - Trained with standard oversampling/balancing strategy.
+   - Metrics recorded as reference.
 
-$$\begin{array}{|c|c|c|c|c|}
-\hline
-\textbf{Method} & \textbf{Accuracy} & \textbf{Precision (Fraud)} & \textbf{Recall (Fraud)} & \textbf{F1-Score (Fraud)} \\
-\hline
-\text{Baseline} & 0.99 & 0.86 & 0.60 & 0.7 \\
-\hline
-\text{Smote} & 0.99 & 0.87 & 0.74 & 0.80 \\
-\hline
-\text{CBO} & 0.99 & 0.78 & 0.78 & 0.78 \\
-\hline
-\text{CBU} & 0.99 & 0.64 & 0.78 & 0.70 \\
-\hline
-\end{array}$$
+2. **GMM+CBU Model:**  
+   - Minority class distribution modeled using a **Gaussian Mixture Model**.  
+   - Synthetic samples generated from high-density regions of the fitted distribution.  
+   - Combined with **Class-Balanced Undersampling (CBU)** for majority class reduction.  
+
+3. **Evaluation Metrics:**  
+   - Precision, Recall, F1-score  
+   - ROC-AUC (Receiver Operating Characteristic)  
+   - PR-AUC (Precision-Recall curve)
 
 ---
 
-## 🔑 Key Insights
-- Resampling significantly improved recall for the minority class.
-- SMOTE provided the best **balance between precision and recall**.
-- Randomized Search improved performance by fine-tuning hyperparameters.
-- Undersampling worked but lost too much information.
+## 📊 Results
+
+### Performance Comparison
+
+$$
+\begin{array}{|l|l|l|}
+\hline
+\textbf{Metric} & \textbf{Baseline Balanced} & \textbf{GMM+CBU} \\ \hline
+\text{Precision} & 0.7500 & 0.8182 \\ \hline
+\text{Recall} & 0.5714 & 0.6429 \\ \hline
+\text{F1-score} & 0.6486 & 0.7200 \\ \hline
+\text{ROC-AUC} & 0.9123 & 0.9577 \\ \hline
+\text{PR-AUC} & 0.6832 & 0.7458 \\ \hline
+\end{array}
+$$
+
+---
+
+## 🔎 Analysis
+
+- **Recall improved** significantly (0.5714 → 0.6429), meaning the model became better at detecting true minority samples.  
+- **Precision increased** (0.7500 → 0.8182), showing that oversampling with GMM did not introduce noisy or overlapping samples.  
+- **F1-score improved**, confirming a better balance between sensitivity and specificity.  
+- Both **ROC-AUC** and **PR-AUC** improved, showing stronger generalization and robustness across thresholds.  
+
+---
+
+## ✅ Final Recommendation
+
+The findings demonstrate that **GMM-based oversampling outperforms simpler balancing strategies** in this context. It provides:
+
+- **Theoretical soundness:** Ability to capture multi-modal and non-linear distributions of the minority class.  
+- **Empirical gains:** Consistent improvements in recall, precision, F1-score, and AUC metrics.  
+- **Robustness:** Generates synthetic points in high-density regions, avoiding unrealistic interpolations.
+
+**Recommendation:**  
+Adopt GMM-based synthetic data generation as the preferred oversampling method for imbalanced classification problems. It achieves a superior trade-off between detecting minority samples and maintaining overall model reliability. For further improvements, consider combining GMM with ensemble learning or cost-sensitive approaches.
+
+
 
