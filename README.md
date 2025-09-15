@@ -40,15 +40,15 @@ $$
 \hline
 \textbf{Metric} & \textbf{Baseline Balanced} & \textbf{GMM+CBU} \\ 
 \hline
-\text{Precision} & 0.7500 & 0.8182 \\ 
+\text{Precision} & 0.8211 & 0.8011 \\ 
 \hline
-\text{Recall} & 0.5714 & 0.6429 \\ 
+\text{Recall} & 0.6047 & 0.7209 \\ 
 \hline
-\text{F1-score} & 0.6486 & 0.7200 \\ 
+\text{F1-score} & 0.6964 & 0.7592 \\ 
 \hline
-\text{ROC-AUC} & 0.9123 & 0.9577 \\ 
+\text{ROC-AUC} & 0.9495 & 0.9629 \\ 
 \hline
-\text{PR-AUC} & 0.6832 & 0.7458 \\ 
+\text{PR-AUC} & 0.6669 & 0.6709 \\ 
 \hline
 \end{array}
 $$
@@ -62,8 +62,8 @@ $$
 
 ## 🔎 Analysis
 
-- **Recall improved** significantly (0.5714 → 0.6429), meaning the model became better at detecting true minority samples.  
-- **Precision increased** (0.7500 → 0.8182), showing that oversampling with GMM did not introduce noisy or overlapping samples.  
+- **Recall improved** significantly (0.6047 → 0.7209), meaning the model became better at detecting true minority samples.  
+- **Precision (stable)** (0.8211 → 0.8011), showing that oversampling with GMM did not introduce significantly noisy or overlapping samples.  
 - **F1-score improved**, confirming a better balance between sensitivity and specificity.  
 - Both **ROC-AUC** and **PR-AUC** improved, showing stronger generalization and robustness across thresholds.  
 
