@@ -34,6 +34,7 @@ Traditional oversampling methods such as **SMOTE** interpolate between existing 
 
 ### Performance Comparison
 
+#### Performance Metric
 $$
 \begin{array}{|l|l|l|}
 \hline
@@ -51,6 +52,11 @@ $$
 \hline
 \end{array}
 $$
+
+#### Precision-Recall Curve
+
+<img width="939" height="433" alt="{014DB632-CBBC-4135-AA86-6858FA08EE4F}" src="https://github.com/user-attachments/assets/e829d9cc-21ff-4eb3-8ab9-c8e81f2c1d1e" />
+
 
 ---
 
